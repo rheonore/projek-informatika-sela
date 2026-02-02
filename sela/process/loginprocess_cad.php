@@ -6,9 +6,6 @@ error_reporting(E_ALL);
 session_start();
 require_once '../config/db.php';
 
-var_dump($_SESSION);
-exit;
-
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     header("Location: ../login.php");
     exit;

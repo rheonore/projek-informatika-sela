@@ -7,7 +7,11 @@
 
     <!-- CSS nanti diurus temanmu -->
     <link rel="stylesheet" href="assets/style.css">
+    <link rel="manifest" href="pwa/manifest.json">
+    <meta name="theme-color" content="#5b3df5">
+
 </head>
+
 <body>
 
     <div class="splash-container">
@@ -22,6 +26,12 @@
             <a href="register.php" class="btn btn-secondary">Register</a>
         </div>
     </div>
+
+    <script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("pwa/service-worker.js");
+}
+</script>
 
 </body>
 </html>

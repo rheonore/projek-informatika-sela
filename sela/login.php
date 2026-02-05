@@ -4,32 +4,32 @@
     <meta charset="UTF-8">
     <title>Login – SELA</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel=""stylesheet" href=""assets/css/style.css>
 </head>
 <body>
+    <div class="login-container">
+        <h1>Login</h1>
 
-<div class="auth-container">
-    <h1 class="auth-title">Login</h1>
-    <p class="auth-subtitle">Masuk ke akun SELA kamu</p>
+        <form method="POST" action="process/login_process.php">
+            <div class="input-group">
+                <span>👤</span> <input type="text" placeholder="Enter username or email" required>
+            </div>
 
-    <form class="auth-form" method="post" action="process/login_process.php">
-        <div class="form-group">
-            <label for="email">Email / Username</label>
-            <input type="text" id="email" name="email" placeholder="Masukkan email" required>
-        </div>
+            <div class="input-group">
+                <span>🔒</span>
+                <input type="password" placeholder="Enter password" required>
+            </div>
 
-        <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" placeholder="Password" required>
-        </div>
+            <button type="submit" class="btn-login" onclick="window.location.href='ceklist.html'">
+                Log In <span class="arrow">→</span>
+            </button>
+        </form>
 
-        <button type="submit" class="btn btn-primary">Login</button>
-    </form>
+        <div class="divider">OR</div>
 
-    <p class="auth-footer">
-        Belum punya akun?
-        <a href="register.php">Daftar</a>
-    </p>
-</div>
-
+        <button class="btn-signup"onclick="window.location.href='register.html'" >
+            Sign Up <span class="arrow">→</span>
+        </button>
+    </div>
 </body>
 </html>

@@ -1,0 +1,165 @@
+    :root {
+            --primary-purple: #6B52A1;
+            --bg-light: #F3EAFB;
+            --text-dark: #333;
+            --text-gray: #AAA;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+
+        body {
+            background-color: #e0e0e0;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        h1, h2, h3, .task-title {
+            font-family: 'Libre Baskerville', serif;
+        }
+
+        .phone-screen {
+            width: 100%;
+            max-width: 412px;
+            background: var(--bg-light);
+            position: relative;
+            min-height: 100vh;
+            padding: 20px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 40px;
+        }
+        .logo-area { display: flex; align-items: center; gap: 10px; }
+        .logo-img { width: 45px; height: 45px; border-radius: 50%; background: #ddd; }
+        .brand-name { font-size: 28px; font-weight: 800; }
+
+        .brand-name { font-family: 'Crimson Pro', serif; color: var(--primary-purple); }
+
+        /* Todo Item Styling */
+        .section-title {
+            font-family: 'Crimson Pro', serif;
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: #444;
+        }
+
+        .todo-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        /* Checkbox Custom */
+        .checkbox {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--primary-purple);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            background: white;
+            transition: all 0.2s ease;
+        }
+
+        /* State saat dicentang */
+        .todo-item.completed .checkbox {
+            background-color: var(--primary-purple);
+        }
+
+        .todo-item.completed .checkbox::after {
+            content: '✓';
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .todo-text {
+            font-size: 16px;
+            color: var(--text-dark);
+            transition: 0.2s;
+        }
+
+        /* Style teks saat selesai */
+        .todo-item.completed .todo-text {
+            text-decoration: line-through;
+            color: var(--text-gray);
+        }
+
+        hr { border: 0; border-top: 1px solid #DDD; margin: 20px 0; }
+
+        .add-list-btn {
+            color: var(--text-dark);
+            font-size: 14px;
+            margin-left: 39px;
+            cursor: pointer;
+            opacity: 0.7;
+        }
+
+        /* Floating Button */
+        .fab {
+            position: fixed;
+            bottom: 30px;
+            right: calc(50% - 180px); /* Menyesuaikan posisi di layar lebar */
+            width: 65px;
+            height: 65px;
+            background-color: var(--primary-purple);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 40px;
+            box-shadow: 0 8px 15px rgba(107, 82, 161, 0.4);
+        }
+        @media (max-width: 412px) { .fab { right: 20px; } }
+
+        .fab:hover {
+            box-shadow: 0 12px 20px rgba(107, 82, 161, 0.6);
+            transform: translateY(-2px);
+            transition: 0.2s;
+            cursor: pointer;
+        }
+
+/* Form tambah task & subtask */
+.add-form {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.add-form input[type="text"] {
+    flex: 1;
+    padding: 8px 10px;
+    border: none;
+    border-bottom: 2px solid var(--primary-purple);
+    background: transparent;
+    font-size: 16px;
+    outline: none;
+    color: var(--text-dark);
+}
+
+.add-form input::placeholder {
+    color: var(--text-gray);
+}
+
+.add-form button {
+    background: none;
+    border: none;
+    color: var(--primary-purple);
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+}

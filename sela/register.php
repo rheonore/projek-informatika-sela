@@ -47,53 +47,44 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>Register – SELA</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/style.css">
+    <title>SELA - Register</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/register.css">
 </head>
 <body>
 
-<div class="auth-container">
-    <h1 class="auth-title">Register</h1>
-    <p class="auth-subtitle">Buat akun SELA baru</p>
+<div class="register-container">
+    <h1>Register</h1>
 
-    <?php if ($error): ?>
-        <p class="error"><?= htmlspecialchars($error) ?></p>
-    <?php endif; ?>
-
-    <?php if ($success): ?>
-        <p class="success"><?= htmlspecialchars($success) ?></p>
-    <?php endif; ?>
-
-
-    <form class="auth-form" method="post" action="process/register_process.php">
-        <div class="form-group">
-            <label for="username">Username</label>
-            <input type="text" id="username" name="username" placeholder="Username" required>
+    <form method="POST" action="process/register_process.php">
+        <div class="input-group">
+            <span>👤</span>
+            <input type="text" name="username" placeholder="Masukkan username" required>
         </div>
 
-        <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="Email" required>
+        <div class="input-group">
+            <span>✉️</span>
+            <input type="email" name="email" placeholder="Masukkan email" required>
         </div>
 
-        <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" placeholder="Password" required>
+        <div class="input-group">
+            <span>🔒</span>
+            <input type="password" name="password" placeholder="Masukkan password" required>
         </div>
 
-        <div class="form-group">
-            <label for="confirm">Konfirmasi Password</label>
-            <input type="password" id="confirm" name="confirm" placeholder="Ulangi password" required>
-        </div>
-
-        <button type="submit" class="btn btn-primary">Register</button>
+        <button class="btn-signup" type="submit">
+            Sign Up →
+        </button>
     </form>
 
-    <p class="auth-footer">
-        Sudah punya akun?
-        <a href="login.php">Login</a>
-    </p>
+    <div class="divider">OR</div>
+
+    <button class="btn-login-outline" onclick="location.href='login.php'">
+        Log in →
+    </button>
 </div>
 
 </body>

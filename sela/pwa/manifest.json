@@ -3,7 +3,7 @@
   "short_name": "SELA",
   "start_url": "/sela/index.php",
   "display": "standalone",
-  "background_color": "#5b3df5",
+  "background_color": "#B647B2",
   "theme_color": "#5b3df5",
   "orientation": "portrait",
   "icons": [

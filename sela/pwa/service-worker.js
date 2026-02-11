@@ -1,4 +1,4 @@
-const CACHE_NAME = "sela-v1";
+const CACHE_NAME = "sela";
 
 const urlsToCache = [
   "/sela/",

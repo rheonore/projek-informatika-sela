@@ -84,10 +84,13 @@
             letter-spacing: 1px;
         }
     </style>
+    <link rel="manifest" href="/sela/pwa/manifest.json">
+    <meta name="theme-color" content="#5b3df5">
 </head>
+
 <body>
 
-  <div class="splash-container" onclick="location.href='login.php'">
+<div class="splash-container" onclick="location.href='login.php'">
     <div class="logo-circle">
         <img src="assets/curut.png" alt="Sela Cat Logo">
     </div>
@@ -95,11 +98,16 @@
 
     <div class="footer-text">Tap to Continue</div>
 
-    <script>
+    <!-- <script>
         // Otomatis pindah ke halaman login setelah 3 detik
         setTimeout(() => {
             window.location.href = 'login.php';
-        }, 3000);
+        }, 3000); -->
+    </script>
+    <script>
+        window.addEventListener("beforeinstallprompt", (e) => {
+        e.preventDefault();
+        });
     </script>
 
 </body>

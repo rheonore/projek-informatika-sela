@@ -1,7 +1,8 @@
 {
   "name": "SELA - Task Tracker Sekolah",
   "short_name": "SELA",
-  "start_url": "/sela/index.php",
+  "start_url": "/sela/",
+  "scope": "/sela/",
   "display": "standalone",
   "background_color": "#B647B2",
   "theme_color": "#5b3df5",

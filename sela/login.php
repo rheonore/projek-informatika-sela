@@ -16,8 +16,8 @@ if (isset($_SESSION['user_id'])) {
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/login.css">
 </head>
-<body>
 
+<body>
 <div class="login-container">
     <h1>Login</h1>
 
@@ -42,7 +42,33 @@ if (isset($_SESSION['user_id'])) {
     <button class="btn-signup" onclick="location.href='register.php'">
         Sign Up →
     </button>
-</div>
+    <button id="installBtn" style="display:none;">
+        Install SELA
+    </button>
+    
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
 
+    let deferredPrompt;
+    const installBtn = document.getElementById("installBtn");
+
+    window.addEventListener("beforeinstallprompt", (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    installBtn.style.display = "block";
+    });
+
+    installBtn.addEventListener("click", async () => {
+        if (deferredPrompt) {
+        deferredPrompt.prompt();
+        const { outcome } = await deferredPrompt.userChoice;
+        deferredPrompt = null;
+        installBtn.style.display = "none";
+    }
+    });
+
+    });
+    </script>
+    </div>
 </body>
 </html>

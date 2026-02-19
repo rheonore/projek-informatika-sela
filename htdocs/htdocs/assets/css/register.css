@@ -1,0 +1,144 @@
+        :root {
+            --bg-purple-light: #F3EAFB;
+            --glass-bg: rgba(255, 255, 255, 0.3);
+            --primary-btn: #8B3371; /* Warna tombol Sign Up */
+            --input-white: #FFFFFF;
+            --text-main: #333333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            /* Menggunakan latar belakang gradasi ungu muda sesuai gambar */
+            background: linear-gradient(180deg, #E5D1FA 0%, #F3EAFB 100%);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        h1, h2, h3, .task-title {
+            font-family: 'Libre Baskerville', serif;
+        }
+
+        /* Container Kartu Register */
+        .register-container {
+            width: 100%;
+            max-width: 380px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 40px 25px;
+            border-radius: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        h1 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 52px;
+            color: var(--text-main);
+            margin-bottom: 30px;
+        }
+
+        /* Styling Input Group */
+        .input-group {
+            background: var(--input-white);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            padding: 12px 18px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .input-group span {
+            font-size: 18px;
+            margin-right: 12px;
+            color: #666;
+            display: flex;
+            align-items: center;
+        }
+
+        .input-group input {
+            border: none;
+            outline: none;
+            width: 100%;
+            font-size: 15px;
+            color: #444;
+            background: transparent;
+        }
+
+        /* Tombol Sign Up Utama */
+        .btn-signup {
+            background-color: var(--primary-btn);
+            color: white;
+            border: none;
+            width: 100%;
+            padding: 16px;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: 600;
+            margin-top: 5px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            transition: 0.2s ease;
+        }
+
+        .btn-signup:active {
+            transform: scale(0.97);
+        }
+
+        /* Divider OR */
+        .divider {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+            color: var(--text-main);
+            font-size: 14px;
+            font-weight: 800;
+        }
+
+        .divider::before, .divider::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1.5px solid var(--text-main);
+        }
+
+        .divider:not(:empty)::before { margin-right: 15px; }
+        .divider:not(:empty)::after { margin-left: 15px; }
+
+        /* Tombol Log In (Outline) */
+        .btn-login-outline {
+            background: transparent;
+            color: var(--primary-btn);
+            border: 2px solid var(--primary-btn);
+            width: 100%;
+            padding: 14px;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            transition: 0.3s;
+        }
+
+        .btn-login-outline:hover {
+            background: rgba(139, 51, 113, 0.05);
+        }
+
+        .arrow { font-size: 20px; }

@@ -1,11 +1,11 @@
 const CACHE_NAME = "sela-v2";
 
 const urlsToCache = [
-  "/sela/",
-  "/sela/index.php",
-  "/sela/assets/curut.png",
-  "/sela/login.php",
-  "/sela/dashboard.php",
+  "/",
+  "/index.php",
+  "/assets/curut.png",
+  "/login.php",
+  "/dashboard.php",
 ];
 
 self.addEventListener("install", event => {

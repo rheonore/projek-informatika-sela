@@ -11,6 +11,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         die("Password tidak sama");
     }
 
+    $check = $conn->prepare("SELECT id FROM users WHERE email = ?");
+    $check->bind_param("s", $email);
+    $check->execute();
+    $check->store_result();
+
+    if ($check->num_rows > 0) {
+        die("Email sudah terdaftar");
+    }
+
     $hashed = password_hash($password, PASSWORD_DEFAULT);
 
     $stmt = $conn->prepare(

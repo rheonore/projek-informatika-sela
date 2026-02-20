@@ -84,30 +84,32 @@
             letter-spacing: 1px;
         }
     </style>
-    <link rel="manifest" href="/sela/pwa/manifest.json">
+    <link rel="manifest" href="pwa/manifest.json">
     <meta name="theme-color" content="#5b3df5">
 </head>
 
 <body>
 
-<div class="splash-container" onclick="location.href='login.php'">
-    <div class="logo-circle">
-        <img src="assets/curut.png" alt="Sela Cat Logo">
+    <div class="splash-container" onclick="location.href='login.php'">
+        <div class="logo-circle">
+            <img src="assets/curut.png" alt="Sela Cat Logo">
+        </div>
     </div>
-</div>
 
     <div class="footer-text">Tap to Continue</div>
 
-    <!-- <script>
-        // Otomatis pindah ke halaman login setelah 3 detik
-        setTimeout(() => {
-            window.location.href = 'login.php';
-        }, 3000); -->
-    </script>
     <script>
-        window.addEventListener("beforeinstallprompt", (e) => {
-        e.preventDefault();
+    if ("serviceWorker" in navigator) {
+    window.addEventListener("load", function() {
+        navigator.serviceWorker.register("service-worker.js")
+        .then(function(reg) {
+            console.log("Service Worker registered");
+        })
+        .catch(function(err) {
+            console.log("Service Worker failed:", err);
         });
+    });
+    }
     </script>
 
 </body>

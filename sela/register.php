@@ -75,6 +75,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <input type="password" name="password" placeholder="Masukkan password" required>
         </div>
 
+        <div class="input-group">
+            <span>🔒</span>
+            <input type="password" name="confirm" placeholder="Konfirmasi password" required>
+        </div>
+
+
         <button class="btn-signup" type="submit">
             Sign Up →
         </button>
